@@ -1,8 +1,16 @@
 cmake_minimum_required(VERSION 3.16)
 project(pi C)
 
+if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -lm")
+endif()
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -lm")
 
 add_executable(st c1/stopnie.c)
 add_executable(za c1/przyjazn.c)
 add_executable(do c1/doskonale.c)
+add_executable(perf c2/perf.c)
+add_executable(primes c2/primes.c)
+add_executable(fibo c2/fibo.c)
+target_link_libraries(perf PRIVATE m)
