@@ -4,13 +4,13 @@
 #include <stdio.h>
 #include <math.h>
 #include <malloc.h>
+#include <aio.h>
 
 int main(){
-    int* a = malloc(sizeof(int)*10);
+    int* one = malloc(sizeof(int)*10);
     int poczatek, koniec;
     scanf("%d %d",&poczatek, &koniec);
     int ile_ich_jest=0;
-    int one[10];
     if(poczatek % 2 ==1){
         poczatek++;
     }
@@ -34,6 +34,5 @@ int main(){
     }
     if(ile_ich_jest >= 1)
         printf("%d\n",one[ile_ich_jest-1]);
-    free(a);
+    free(one);
 }
-
