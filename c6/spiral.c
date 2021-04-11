@@ -1,21 +1,6 @@
 #include <stdio.h>
 #include <malloc.h>
 
-void spiral(int i, int j, int l, int **a)
-{
-    while(i != 0){
-        int k = 0;
-
-        for (k = j; k < i; k++) a[j][k] = l++;
-        for (k = j; k < i; k++) a[k][i] = l++;
-        for (k = i; k > j; k--) a[i][k] = l++;
-        for (k = i; k > j; k--) a[k][j] = l++;
-
-        i--;
-        j++;
-    
-    }
-}
 
 int main(void)
 {
