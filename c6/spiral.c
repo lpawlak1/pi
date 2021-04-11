@@ -9,9 +9,6 @@ int main(void)
     int *a = (int *)malloc(n * n * sizeof(int));
     int i, j;
 
-    /* for (i = 0; i < n; i++) */
-    /*     a[i] = (int *)malloc(n * sizeof(int)); */
-
     i = n-1;
     j = 0;
     int l = 1;
