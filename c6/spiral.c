@@ -33,5 +33,6 @@ int main(void)
             printf("%d ", a[(i*n)+j]);
         printf("\n");
     }
+    free(a);
     return 0;
 }
