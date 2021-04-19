@@ -32,4 +32,8 @@ add_executable(field c6/field.c)
 add_executable(spiral c6/spiral.c)
 add_executable(square c6/square.c)
 
+add_executable(rec c7/rec.c)
+add_executable(rom c7/rom.c)
+add_executable(tri c7/tri.c)
+
 add_executable(main main.c)
