@@ -36,4 +36,8 @@ add_executable(rec c7/rec.c)
 add_executable(rom c7/rom.c)
 add_executable(tri c7/tri.c)
 
+add_executable(stamp c8/stamp.c)
+add_executable(seq c8/seq.c)
+add_executable(bin c8/bin.c)
+
 add_executable(main main.c)
