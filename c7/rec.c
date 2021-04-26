@@ -39,7 +39,7 @@ int main(){
         scanf("%d%d%d%d",&ez.x1,&ez.y1,&ez.x2,&ez.y2);
     }
     int* tablica = calloc(sizeof(int),201*201);
-    memset(tablica,0,sizeof(int));
+    memset(tablica,0,201*201);
     for(int i = 0;i<n;i++){
         wypelnij(&ez,tablica);
     }
