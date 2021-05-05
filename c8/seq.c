@@ -63,6 +63,7 @@ int zlicz(int **T,int n,int k,int i,int j){
 int main(){
     int n,k;
     scanf("%d%d",&n,&k);
+
     int **T = malloc(sizeof(int*)*n);
     for(int i = 0;i<n;i++){
         T[i] = malloc(sizeof(int)*n);
@@ -82,5 +83,6 @@ int main(){
     for(int i = 0;i<n;i++)
         free(T[i]);
     free(T);
+
     return 0;
 }

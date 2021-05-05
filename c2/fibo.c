@@ -1,7 +1,5 @@
-//
-// Created by lukas on 09.03.2021.
-//
 #include <stdio.h>
+
 int main(){
     int f1=0;
     int f2=1;
@@ -14,5 +12,4 @@ int main(){
     }
     if(f1*f2 == n) printf("YES");
     else printf("NO");
-    printf("\n");
 }

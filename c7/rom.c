@@ -7,7 +7,7 @@ char * t2[] = {"CM", "CD", "XC", "XL", "IX", "IV", "I"};
 int t3[] = {1000, 500, 100, 50, 10, 5, 1};
 int t4[] = {900, 400, 90, 40, 9, 4, 1};
  
-int f1(char * num)
+int f1(const char * num)
 {
     u_int32_t len = strlen(num);
     int suma = 0;

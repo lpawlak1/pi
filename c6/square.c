@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdlib.h>
 
 int min(int a,int b){
     if (a < b)
         return a;
     return b;
 }
+
 int max(int a, int b){
     if (a>b) return a;
     return b;
 }
+
 void print(int* piony,int* poziomy, int idx){
     printf("%d\n",idx);
     for (int i = 0; i < idx;i ++){
@@ -26,8 +27,10 @@ int main(){
     for(int i = 0; i<n*n;i++){
         scanf("%d",&a[i]);
     }
+
     int* piony = malloc(sizeof(int)*n*n);
     int* poziomy = malloc(sizeof(int)*n*n);
+
     int idx = 0;
     for(int i =1;i<n-1;i++){
         for(int j = 1; j<n-1;j++){
@@ -52,7 +55,11 @@ int main(){
         }
     }
     print(piony,poziomy,idx);
+
     free(a);
     free(piony);
     free(poziomy);
+
+    return 0;
 }
+

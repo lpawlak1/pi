@@ -16,8 +16,7 @@ int main(){
         int suma_dzielnikow = suma(i);
         if(suma_dzielnikow < i)
             if(suma(suma_dzielnikow) == i){
-                printf("%d ",i);
-                printf("%d\n",suma_dzielnikow);
+                printf("%d %d\n",i,suma_dzielnikow);
             }
     }
 }

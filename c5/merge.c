@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+
 void print(int *arr,int n){
     for(int i = 0;i < n;i++){
         printf("%d ",arr[i]);
     }
     printf("\n");
 }
+
 int get_min(int *arr,int *indexy,short *koniec, int n){
     int min = INT_MAX;
     int j = 0;
@@ -43,6 +45,7 @@ int main(){
 
     short *koniec = malloc(sizeof(short)*n);
     for(int i=0;i<n;i++) koniec[i] = 0;
+
     int suma = 0; 
     while (suma < n*n){
         int min = get_min(arr,indexy,koniec,n);
@@ -53,8 +56,10 @@ int main(){
         }
     }
     print(wynik,idx);
+
     free(arr);
     free(koniec);
     free(indexy);
     free(wynik);
+    return 0;
 }

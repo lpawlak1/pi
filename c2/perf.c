@@ -1,13 +1,10 @@
-//
-// Created by lukas on 09.03.2021.
-//
 #include <stdio.h>
 #include <math.h>
 #include <malloc.h>
 #include <aio.h>
 
 int main(){
-    int* one = malloc(sizeof(int)*10);
+    int* tab = malloc(sizeof(int)*10);
     int poczatek, koniec;
     scanf("%d %d",&poczatek, &koniec);
     int ile_ich_jest=0;
@@ -24,15 +21,15 @@ int main(){
             }
         }
         if(suma == i){
-            one[ile_ich_jest] = i;
+            tab[ile_ich_jest] = i;
             ile_ich_jest++;
         }
     }
     printf("%d\n",ile_ich_jest);
     for(int i = 0; i < ile_ich_jest-1; i++){
-        printf("%d ",one[i]);
+        printf("%d ",tab[i]);
     }
     if(ile_ich_jest >= 1)
-        printf("%d\n",one[ile_ich_jest-1]);
-    free(one);
+        printf("%d\n",tab[ile_ich_jest-1]);
+    free(tab);
 }

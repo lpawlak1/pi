@@ -16,15 +16,18 @@ int zlicz(int **T,int** P,int k,int l,int n,int i,int j,int maxi){
     }
     return suma;
 }
+
 int main(){
     int n,k,l;
     scanf("%d%d%d",&n,&k,&l);
+
     int **T = malloc(sizeof(int*)*n);
     for(int i = 0;i<n;i++){
         T[i] = malloc(sizeof(int)*n);
         for(int j = 0;j<n;j++)
             scanf("%d",&T[i][j]);
     }
+
     int **P = malloc(sizeof(int*)*k);
     for(int i = 0;i<k;i++){
         P[i] = malloc(sizeof(int)*l);
@@ -32,6 +35,7 @@ int main(){
             scanf("%d",&P[i][j]);
         }
     }
+
     int maxi = zlicz(T,P,k,l,n,0,0,0);
     for(int i = 0;i<n;i++){
         for(int j = 0;j<n;j++){
@@ -39,7 +43,15 @@ int main(){
             maxi = (a > maxi) ? a : maxi;
         }
     }
+
     printf("%d",maxi);
-    free(P);
+
+    for(int i = 0;i<n;i++) free(T[i]);
     free(T);
+
+    for(int i = 0;i<k;i++) free(P[i]);
+    free(P);
+
+    return 0;
 }
+

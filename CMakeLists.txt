@@ -21,7 +21,7 @@ add_executable(narc c3/narc.c)
 add_executable(weight c3/weight.c)
 
 add_executable(min c4/min.c)
-add_executable(pair c4/pair.c)
+#add_executable(pair c4/pair.c)
 add_executable(pri c4/pri.c)
 
 add_executable(fact c5/fact.c)

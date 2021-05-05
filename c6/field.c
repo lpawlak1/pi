@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdlib.h>
 #include <string.h>
 
 int min(int a,int b){
@@ -8,10 +7,12 @@ int min(int a,int b){
         return a;
     return b;
 }
+
 int max(int a, int b){
     if (a>b) return a;
     return b;
 }
+
 void print(int* piony,int* poziomy, int idx){
     printf("%d\n",idx);
     for (int i = 0; i < idx;i ++){
@@ -19,6 +20,7 @@ void print(int* piony,int* poziomy, int idx){
     }
 
 }
+
 int reku(int* a,int i,int j,int k,int l,int n, int maxi, int* dp, int* dp_2){
     // w prawo
     if(l != n-1){
@@ -90,15 +92,18 @@ int main(){
 
     int* dp_2 = malloc(sizeof(int)*n*n*n);
     memset(dp_2,-1,sizeof(int)*n*n*n);
+
     for(int i =n-1;i>=0;i--){
         for(int j = n-1; j>=0;j--){
             if(a[(i*n)+j] != 1)
-                /* printf("%d %d %d\n",i,j,reku(a,i,j,i,j,n,1)); */
                 maxi = max(reku(a,i,j,i,j,n,1,dp,dp_2),maxi);
         }
     }
     printf("%d",maxi);
+
     free(a);
     free(dp);
     free(dp_2);
+    return 0;
 }
+
