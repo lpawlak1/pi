@@ -1,29 +1,42 @@
-
 #include <stdlib.h>
 #include <stdio.h>
 
-short check(int i , int S){
-    int cp= i;
-    int sum = 0;
-    while(cp != 0){
-        sum += cp;
-        cp/=10;
+int check(long long int i){
+    int len = 0;
+    while(i != 0){
+        i/=10;
+        len+=1;
     }
-    if (sum == S)
-        return 1;
-    return 0;
+    return len;
 }
 
 int main(){
-    int S;
-    scanf("%d",&S);
-    int i;
-    for(i = 1;i<=S;i++) {
-        if(check(i,S)){
-            printf("%d",i);
-            return 0;
-        }
+    long long int S = 0;
+    scanf("%lld",&S);
+    long long int len = check(S);
+
+    int i = 1;
+    long long int cos= 1;
+    while (i < len){
+        cos *= 10;
+        cos ++;
+        i++;
     }
-    printf("%d",-1);
-            
+
+    int* N = malloc(sizeof(int)*len);
+    for (int i = 0; i< len; i++){
+        while (S-cos >= 0){
+            S -= cos;
+            N[i] ++;
+            if (N[i] > 9){printf("-1"); free(N); return -1234567;}
+        }
+        cos/=10;
+    }
+
+    for(int i = (N[0] == 0) ? 1 : 0 ; i < len; i++){
+        printf("%d",N[i]);
+    }
+
+    free(N);
 }
+

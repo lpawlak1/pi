@@ -1,6 +1,7 @@
 #include <malloc.h>
 #include <stdlib.h>
 #include <string.h>
+enum bool{false,true};
 
 int __cmp__(char* a, char* b)
 {
@@ -12,35 +13,33 @@ int __cmp__(char* a, char* b)
     else return 1;
 }
 
-
-void najwiekszy_substring(char* test, int idx, int size, char* max_str, char* curr, int curr_size,int index_test){
-//    for(int i =0;i<curr_size;i++) printf("%c",curr[i]);
-//    printf("\n");
-    if (idx == size){
-        if (curr_size > 0)
-            if(__cmp__(max_str,curr)){
-                strcpy(max_str,curr);
-            }
-        return;
-    }
-    najwiekszy_substring(test,idx+1,size,max_str,curr,curr_size,index_test+1);
-    curr[curr_size] = test[idx];
-    najwiekszy_substring(test,idx+1,size,max_str,curr,curr_size+1,index_test+1);
-    curr[idx] = '\0';
-}
-
-
 int main(){
     char* test = malloc(sizeof(char)*51);
     scanf("%s",test);
     int size = strlen(test);
-    char* curr = malloc(sizeof(char)*51);
-    char* max_str= malloc(sizeof(char)*51);
-    strcpy(max_str,test);
-    memset(curr,'\0',51);
-    najwiekszy_substring(test,0,size,max_str,curr,0,0);
-    printf("%s",max_str);
-    free(curr);
+
+    if(size == 1){
+        printf("%s",test);
+        free(test);
+        return 0;
+    }
+
+
+
+    int* t = malloc(sizeof(int)*size);
+    int l = size-1;
+    t[l] = true;
+
+    for (int x = l-1;x > -1; x--){
+        if (test[x] >= test[l]){
+            l = x;
+            t[x] = true;
+        }
+    }
+
+    for(int i = 0; i < size; i++){
+        if (t[i] == true)
+            printf("%c",test[i]);
+    }
     free(test);
-    free(max_str);
 }
