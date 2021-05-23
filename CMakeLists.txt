@@ -44,4 +44,8 @@ add_executable(last c9/last.c)
 add_executable(odd c9/odd.c)
 add_executable(seq c9/seq.c)
 
+add_executable(ring c10/ring.c)
+add_executable(semi c10/semi.c)
+add_executable(sol c10/sol.c)
+
 add_executable(main main.c)
